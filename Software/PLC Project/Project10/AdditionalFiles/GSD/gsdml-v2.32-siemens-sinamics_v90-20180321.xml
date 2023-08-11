@@ -1,0 +1,986 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.32.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+    <DeviceIdentity VendorID="0x002A" DeviceID="0x051A">
+      <InfoText TextId="IDT_FamilyDescription" />
+      <VendorName Value="Siemens AG" />
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="Drives" ProductFamily="SINAMICS" />
+    </DeviceFunction>
+    <ApplicationProcess>
+      <DeviceAccessPointList>
+        <DeviceAccessPointItem ID="IDD_V90PN-V4.7" PhysicalSlots="0..2" ModuleIdentNumber="0x00020209" MinDeviceInterval="16" ImplementationType="ERTEC200" DNS_CompatibleName="SINAMICS-V90-PN" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="0" DeviceAccessSupported="true" RequiredSchemaVersion="V2.31" PNIO_Version="V2.32" MultipleWriteSupported="true" CheckDeviceID_Allowed="true" LLDP_NoD_Supported="true" ResetToFactoryModes="2" NameOfStationNotTransferable="false">
+          <ModuleInfo>
+            <Name TextId="IDT_DAP_NAME_V225_V90-V90PN-V4.7" />
+            <InfoText TextId="IDT_DAP_INFO_V225_V90-V90PN-V4.7" />
+            <Family MainFamily="Drives" ProductFamily="SINAMICS" />
+            <VendorName Value="Siemens AG" />
+            <OrderNumber Value="6SL3 210-5Fxxx-xxFx" />
+            <HardwareRelease Value="V1.0" />
+            <SoftwareRelease Value="V1.00" />
+          </ModuleInfo>
+          <CertificationInfo ConformanceClass="C" ApplicationClass="Isochronous" NetloadClass="II">
+            <ProfileList>
+              <ProfileItem ProfileName="PROFIdrive" />
+            </ProfileList>
+          </CertificationInfo>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="IDT_SS_IF_CU" />
+            <SubslotItem SubslotNumber="32769" TextId="IDT_SS_P1_CU" />
+            <SubslotItem SubslotNumber="32770" TextId="IDT_SS_P2_CU" />
+          </SubslotList>
+          <IOConfigData MaxInputLength="68" MaxOutputLength="52" />
+          <UseableModules>
+            <ModuleItemRef ModuleItemTarget="IDM_EMPTY_1" AllowedInSlots="2" />
+            <ModuleItemRef ModuleItemTarget="IDM_DRIVE" AllowedInSlots="1" FixedInSlots="1" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="IDS_DAP_V90PN-V4.7" SubmoduleIdentNumber="0x00000002" Writeable_IM_Records="1 2 3" MayIssueProcessAlarm="false">
+              <IOData />
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+                  <Name TextId="IDT_RECORD1" />
+                  <Const Data="0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="VAL_DIAG_ACTIVATION" DataType="Integer8" ByteOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="IDT_REC_DIAG_ACTIVATION" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="IDT_DAP_NAME_V225_V90-V90PN-V4.7" />
+                <InfoText TextId="IDT_DAP_INFO_V225_V90-V90PN-V4.7" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem ID="IDS_IF_V90PN-V4.7" SubmoduleIdentNumber="0x00000003" TextId="IDT_ISM_CU" SubslotNumber="32768" SupportedProtocols="SNMP;LLDP" SupportedMibs="MIB2" SupportedRT_Classes="RT_CLASS_1;RT_CLASS_2;RT_CLASS_3" IsochroneModeInRT_Classes="RT_CLASS_3" IsochroneModeSupported="true" DCP_BoundarySupported="true" PTP_BoundarySupported="true" DelayMeasurementSupported="true">
+              <RT_Class3Properties MaxBridgeDelay="2920" MaxNumberIR_FrameData="130" StartupMode="Legacy;Advanced" ForwardingMode="Absolute" />
+              <SynchronisationMode SupportedRole="SyncSlave" MaxLocalJitter="50" T_PLL_MAX="1000" SupportedSyncProtocols="PTCP" />
+              <ApplicationRelations StartupMode="Legacy;Advanced">
+                <TimingProperties SendClock="16 32 64 128" ReductionRatio="1 2 4 8 16 32 64 128 256 512" />
+                <RT_Class3TimingProperties SendClock="16 24 32 40 48 56 64 72 80 88 96 104 112 120 128" ReductionRatioPow2="1 2 4 8 16" ReductionRatioNonPow2="1" MaxReductionRatioIsochroneMode="1" />
+              </ApplicationRelations>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem ID="IDS_P1_V90PN-V4.7" SubmoduleIdentNumber="0x00000004" TextId="IDT_PORT1" SubslotNumber="32769" MaxPortRxDelay="374" MaxPortTxDelay="280" LinkStateDiagnosisCapability="Up+Down" PortDeactivationSupported="true" MAUTypes="16" CheckMAUTypeSupported="true" CheckMAUTypeDifferenceSupported="true">
+              <MAUTypeList>
+                <MAUTypeItem Value="16" AdjustSupported="true" />
+              </MAUTypeList>
+            </PortSubmoduleItem>
+            <PortSubmoduleItem ID="IDS_P2_V90PN-V4.7" SubmoduleIdentNumber="0x00000005" TextId="IDT_PORT2" SubslotNumber="32770" MaxPortRxDelay="374" MaxPortTxDelay="280" LinkStateDiagnosisCapability="Up+Down" PortDeactivationSupported="true" MAUTypes="16" CheckMAUTypeSupported="true" CheckMAUTypeDifferenceSupported="true">
+              <MAUTypeList>
+                <MAUTypeItem Value="16" AdjustSupported="true" />
+              </MAUTypeList>
+            </PortSubmoduleItem>
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="IDGR_DEVICE" />
+          </Graphics>
+        </DeviceAccessPointItem>
+      </DeviceAccessPointList>
+      <ModuleList>
+        <ModuleItem ID="IDM_EMPTY_1" ModuleIdentNumber="0x00010000" PhysicalSubslots="1">
+          <ModuleInfo>
+            <Name TextId="IDT_MOD_NAME_EMPTY" />
+            <InfoText TextId="IDT_MOD_INFO_EMPTY" />
+          </ModuleInfo>
+          <UseableSubmodules>
+            <SubmoduleItemRef SubmoduleItemTarget="IDS_MAP" AllowedInSubslots="1" FixedInSubslots="1" />
+          </UseableSubmodules>
+        </ModuleItem>
+        <ModuleItem ID="IDM_DRIVE" ModuleIdentNumber="0x000100B0" PhysicalSubslots="1 2 3 4">
+          <ModuleInfo>
+            <Name TextId="IDT_MOD_NAME_DRIVE" />
+            <InfoText TextId="IDT_MOD_INFO_DRIVE" />
+          </ModuleInfo>
+          <UseableSubmodules>
+            <SubmoduleItemRef SubmoduleItemTarget="IDS_MAP" AllowedInSubslots="1" FixedInSubslots="1" />
+            <SubmoduleItemRef SubmoduleItemTarget="IDS_NOSAFE" AllowedInSubslots="2" FixedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="IDS_EMPTY" AllowedInSubslots="3 4" />
+            <SubmoduleItemRef SubmoduleItemTarget="IDS_TEL1" AllowedInSubslots="3" />
+            <SubmoduleItemRef SubmoduleItemTarget="IDS_TEL2" AllowedInSubslots="3" />
+            <SubmoduleItemRef SubmoduleItemTarget="IDS_TEL3" AllowedInSubslots="3" />
+            <SubmoduleItemRef SubmoduleItemTarget="IDS_TEL7" AllowedInSubslots="3" />
+            <SubmoduleItemRef SubmoduleItemTarget="IDS_TEL9" AllowedInSubslots="3" />
+            <SubmoduleItemRef SubmoduleItemTarget="IDS_TEL102" AllowedInSubslots="3" />
+            <SubmoduleItemRef SubmoduleItemTarget="IDS_TEL110" AllowedInSubslots="3" />
+            <SubmoduleItemRef SubmoduleItemTarget="IDS_TEL111" AllowedInSubslots="3" />
+            <SubmoduleItemRef SubmoduleItemTarget="IDS_TEL750" AllowedInSubslots="4" />
+          </UseableSubmodules>
+        </ModuleItem>
+      </ModuleList>
+      <SubmoduleList>
+        <SubmoduleItem ID="IDS_MAP" SubmoduleIdentNumber="0x0000FFFF" API="14848" MayIssueProcessAlarm="false">
+          <IOData />
+          <ModuleInfo>
+            <Name TextId="IDT_SM_NAME_MAP" />
+            <InfoText TextId="IDT_SM_INFO_MAP" />
+          </ModuleInfo>
+        </SubmoduleItem>
+        <SubmoduleItem ID="IDS_EMPTY" SubmoduleIdentNumber="0x00001388" API="14848" MayIssueProcessAlarm="false">
+          <IOData />
+          <ModuleInfo>
+            <Name TextId="IDT_SM_NAME_EMPTY" />
+            <InfoText TextId="IDT_SM_INFO_EMPTY" />
+          </ModuleInfo>
+        </SubmoduleItem>
+        <SubmoduleItem ID="IDS_NOSAFE" SubmoduleIdentNumber="0x00001389" API="14848" MayIssueProcessAlarm="false">
+          <IOData />
+          <ModuleInfo>
+            <Name TextId="IDT_SM_NAME_NOSAFE" />
+            <InfoText TextId="IDT_SM_INFO_NOSAFE" />
+          </ModuleInfo>
+        </SubmoduleItem>
+        <SubmoduleItem ID="IDS_TEL1" SubmoduleIdentNumber="0x00000001" API="14848" MayIssueProcessAlarm="false">
+          <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="IDT_SM_NAME_TEL1" />
+            <InfoText TextId="IDT_SM_INFO_TEL1" />
+          </ModuleInfo>
+        </SubmoduleItem>
+        <SubmoduleItem ID="IDS_TEL2" SubmoduleIdentNumber="0x00000002" API="14848" MayIssueProcessAlarm="false">
+          <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="IDT_SM_NAME_TEL2" />
+            <InfoText TextId="IDT_SM_INFO_TEL2" />
+          </ModuleInfo>
+          <IsochroneMode T_DC_Base="8" T_DC_Min="8" T_DC_Max="16" T_IO_Base="250000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="IDS_TEL3" SubmoduleIdentNumber="0x00000003" API="14848" MayIssueProcessAlarm="false">
+          <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="IDT_SM_NAME_TEL3" />
+            <InfoText TextId="IDT_SM_INFO_TEL3" />
+          </ModuleInfo>
+          <IsochroneMode T_DC_Base="8" T_DC_Min="8" T_DC_Max="16" T_IO_Base="250000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="IDS_TEL7" SubmoduleIdentNumber="0x00000007" API="14848" MayIssueProcessAlarm="false">
+          <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="IDT_SM_NAME_TEL7" />
+            <InfoText TextId="IDT_SM_INFO_TEL7" />
+          </ModuleInfo>
+        </SubmoduleItem>
+        <SubmoduleItem ID="IDS_TEL9" SubmoduleIdentNumber="0x00000009" API="14848" MayIssueProcessAlarm="false">
+          <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="IDT_SM_NAME_TEL9" />
+            <InfoText TextId="IDT_SM_INFO_TEL9" />
+          </ModuleInfo>
+          <IsochroneMode T_DC_Base="8" T_DC_Min="8" T_DC_Max="16" T_IO_Base="250000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="IDS_TEL102" SubmoduleIdentNumber="0x00000066" API="14848" MayIssueProcessAlarm="false">
+          <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="IDT_SM_NAME_TEL102" />
+            <InfoText TextId="IDT_SM_INFO_TEL102" />
+          </ModuleInfo>
+          <IsochroneMode T_DC_Base="8" T_DC_Min="8" T_DC_Max="16" T_IO_Base="250000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="IDS_TEL110" SubmoduleIdentNumber="0x0000006E" API="14848" MayIssueProcessAlarm="false">
+          <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="IDT_SM_NAME_TEL110" />
+            <InfoText TextId="IDT_SM_INFO_TEL110" />
+          </ModuleInfo>
+          <IsochroneMode T_DC_Base="8" T_DC_Min="8" T_DC_Max="16" T_IO_Base="250000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="IDS_TEL111" SubmoduleIdentNumber="0x0000006F" API="14848" MayIssueProcessAlarm="false">
+          <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="IDT_SM_NAME_TEL111" />
+            <InfoText TextId="IDT_SM_INFO_TEL111" />
+          </ModuleInfo>
+          <IsochroneMode T_DC_Base="8" T_DC_Min="8" T_DC_Max="16" T_IO_Base="250000" T_IO_InputMin="2" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="IDS_TEL750" SubmoduleIdentNumber="0x000002EE" API="14848" MayIssueProcessAlarm="false">
+          <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_ACTVAL" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+              <DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_REFVAL" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="IDT_SM_NAME_TEL750" />
+            <InfoText TextId="IDT_SM_INFO_TEL750" />
+          </ModuleInfo>
+        </SubmoduleItem>
+      </SubmoduleList>
+      <ValueList>
+        <ValueItem ID="VAL_DIAG_ACTIVATION">
+          <Assignments>
+            <Assign Content="0" TextId="IDT_VAL_DIAG_OFF" />
+            <Assign Content="1" TextId="IDT_VAL_DIAG_ON" />
+          </Assignments>
+        </ValueItem>
+      </ValueList>
+      <ChannelDiagList>
+        <ProfileChannelDiagItem API="14848" ErrorType="36864">
+          <Name TextId="IDT_DIAG_NAME_PD0" />
+          <Help TextId="IDT_DIAG_HELP_PD0" />
+        </ProfileChannelDiagItem>
+        <ProfileChannelDiagItem API="14848" ErrorType="36865">
+          <Name TextId="IDT_DIAG_NAME_PD1" />
+          <Help TextId="IDT_DIAG_HELP_PD1" />
+        </ProfileChannelDiagItem>
+        <ProfileChannelDiagItem API="14848" ErrorType="36866">
+          <Name TextId="IDT_DIAG_NAME_PD2" />
+          <Help TextId="IDT_DIAG_HELP_PD2" />
+        </ProfileChannelDiagItem>
+        <ProfileChannelDiagItem API="14848" ErrorType="36867">
+          <Name TextId="IDT_DIAG_NAME_PD3" />
+          <Help TextId="IDT_DIAG_HELP_PD3" />
+        </ProfileChannelDiagItem>
+        <ProfileChannelDiagItem API="14848" ErrorType="36868">
+          <Name TextId="IDT_DIAG_NAME_PD4" />
+          <Help TextId="IDT_DIAG_HELP_PD4" />
+        </ProfileChannelDiagItem>
+        <ProfileChannelDiagItem API="14848" ErrorType="36869">
+          <Name TextId="IDT_DIAG_NAME_PD5" />
+          <Help TextId="IDT_DIAG_HELP_PD5" />
+        </ProfileChannelDiagItem>
+        <ProfileChannelDiagItem API="14848" ErrorType="36870">
+          <Name TextId="IDT_DIAG_NAME_PD6" />
+          <Help TextId="IDT_DIAG_HELP_PD6" />
+        </ProfileChannelDiagItem>
+        <ProfileChannelDiagItem API="14848" ErrorType="36871">
+          <Name TextId="IDT_DIAG_NAME_PD7" />
+          <Help TextId="IDT_DIAG_HELP_PD7" />
+        </ProfileChannelDiagItem>
+        <ProfileChannelDiagItem API="14848" ErrorType="36872">
+          <Name TextId="IDT_DIAG_NAME_PD8" />
+          <Help TextId="IDT_DIAG_HELP_PD8" />
+        </ProfileChannelDiagItem>
+        <ProfileChannelDiagItem API="14848" ErrorType="36873">
+          <Name TextId="IDT_DIAG_NAME_PD9" />
+          <Help TextId="IDT_DIAG_HELP_PD9" />
+        </ProfileChannelDiagItem>
+        <ProfileChannelDiagItem API="14848" ErrorType="36874">
+          <Name TextId="IDT_DIAG_NAME_PD10" />
+          <Help TextId="IDT_DIAG_HELP_PD10" />
+        </ProfileChannelDiagItem>
+        <ProfileChannelDiagItem API="14848" ErrorType="36875">
+          <Name TextId="IDT_DIAG_NAME_PD11" />
+          <Help TextId="IDT_DIAG_HELP_PD11" />
+        </ProfileChannelDiagItem>
+        <ProfileChannelDiagItem API="14848" ErrorType="36876">
+          <Name TextId="IDT_DIAG_NAME_PD12" />
+          <Help TextId="IDT_DIAG_HELP_PD12" />
+        </ProfileChannelDiagItem>
+        <ProfileChannelDiagItem API="14848" ErrorType="36877">
+          <Name TextId="IDT_DIAG_NAME_PD13" />
+          <Help TextId="IDT_DIAG_HELP_PD13" />
+        </ProfileChannelDiagItem>
+        <ProfileChannelDiagItem API="14848" ErrorType="36878">
+          <Name TextId="IDT_DIAG_NAME_PD14" />
+          <Help TextId="IDT_DIAG_HELP_PD14" />
+        </ProfileChannelDiagItem>
+        <ProfileChannelDiagItem API="14848" ErrorType="36879">
+          <Name TextId="IDT_DIAG_NAME_PD15" />
+          <Help TextId="IDT_DIAG_HELP_PD15" />
+        </ProfileChannelDiagItem>
+        <ProfileChannelDiagItem API="14848" ErrorType="36880">
+          <Name TextId="IDT_DIAG_NAME_PD16" />
+          <Help TextId="IDT_DIAG_HELP_PD16" />
+        </ProfileChannelDiagItem>
+        <ProfileChannelDiagItem API="14848" ErrorType="36881">
+          <Name TextId="IDT_DIAG_NAME_PD17" />
+          <Help TextId="IDT_DIAG_HELP_PD17" />
+        </ProfileChannelDiagItem>
+        <ProfileChannelDiagItem API="14848" ErrorType="36882">
+          <Name TextId="IDT_DIAG_NAME_PD18" />
+          <Help TextId="IDT_DIAG_HELP_PD18" />
+        </ProfileChannelDiagItem>
+        <ProfileChannelDiagItem API="14848" ErrorType="36883">
+          <Name TextId="IDT_DIAG_NAME_PD19" />
+          <Help TextId="IDT_DIAG_HELP_PD19" />
+        </ProfileChannelDiagItem>
+      </ChannelDiagList>
+      <GraphicsList>
+        <GraphicItem ID="IDGR_DEVICE" GraphicFile="GSDML-002A-051A-V90" />
+      </GraphicsList>
+      <ExternalTextList>
+        <PrimaryLanguage>
+          <Text TextId="IDT_MOD_NAME_EMPTY" Value="DO without PZD" />
+          <Text TextId="IDT_MOD_INFO_EMPTY" Value="Drive object (DO) without cyclic PZD" />
+          <Text TextId="IDT_MOD_NAME_DRIVE" Value="Drive" />
+          <Text TextId="IDT_MOD_INFO_DRIVE" Value="Drive object" />
+          <Text TextId="IDT_SM_NAME_PAP" Value="Parameter Access Point" />
+          <Text TextId="IDT_SM_INFO_PAP" Value="Access point to the parameters of the drive object (DO)" />
+          <Text TextId="IDT_SM_NAME_MAP" Value="Module Access Point" />
+          <Text TextId="IDT_SM_INFO_MAP" Value="Module Access Point" />
+          <Text TextId="IDT_SM_NAME_EMPTY" Value="empty submodule" />
+          <Text TextId="IDT_SM_INFO_EMPTY" Value="empty submodule" />
+          <Text TextId="IDT_SM_NAME_NOSAFE" Value="without PROFIsafe" />
+          <Text TextId="IDT_SM_INFO_NOSAFE" Value="empty submodule" />
+          <Text TextId="IDT_SM_NAME_TEL1" Value="Standard telegram 1, PZD-2/2" />
+          <Text TextId="IDT_SM_INFO_TEL1" Value="Standard telegram 1: Closed-loop speed control, PZD length 2/2 words" />
+          <Text TextId="IDT_SM_NAME_TEL2" Value="Standard telegram 2, PZD-4/4" />
+          <Text TextId="IDT_SM_INFO_TEL2" Value="Standard telegram 2: Closed-loop speed control, PZD length 4/4 words" />
+          <Text TextId="IDT_SM_NAME_TEL3" Value="Standard telegram 3, PZD-5/9" />
+          <Text TextId="IDT_SM_INFO_TEL3" Value="Standard telegram 3: Closed-loop speed control plus 1 position encoder, PZD length 5/9 words" />
+          <Text TextId="IDT_SM_NAME_TEL7" Value="Standard telegram 7, PZD-2/2" />
+          <Text TextId="IDT_SM_INFO_TEL7" Value="Standard telegram 7: Positioning, PZD length 2/2 words" />
+          <Text TextId="IDT_SM_NAME_TEL9" Value="Standard telegram 9, PZD-10/5" />
+          <Text TextId="IDT_SM_INFO_TEL9" Value="Standard telegram 9: Positioning, PZD length 10/5 words" />
+          <Text TextId="IDT_SM_NAME_TEL102" Value="SIEMENS telegram 102, PZD-6/10" />
+          <Text TextId="IDT_SM_INFO_TEL102" Value="SIEMENS telegram 102: Closed-loop speed control with torque reduction, 1 position encoder, PZD length 6/10 words" />
+          <Text TextId="IDT_SM_NAME_TEL110" Value="SIEMENS telegram 110, PZD-12/7" />
+          <Text TextId="IDT_SM_INFO_TEL110" Value="SIEMENS telegram 110: Positioning, PZD length 12/7 words" />
+          <Text TextId="IDT_SM_NAME_TEL111" Value="SIEMENS telegram 111, PZD-12/12" />
+          <Text TextId="IDT_SM_INFO_TEL111" Value="SIEMENS telegram 111: Positioning, incl. MDI, PZD length 12/12 words" />
+          <Text TextId="IDT_SM_NAME_TEL750" Value="Supplementary telegram 750, PZD-3/1" />
+          <Text TextId="IDT_SM_INFO_TEL750" Value="Supplementary telegram 750, torque control, PZD length 3/1 words" />
+          <Text TextId="IDT_DATAITEM_ACTVAL" Value="Status word or actual value" />
+          <Text TextId="IDT_DATAITEM_REFVAL" Value="Control word or setpoint" />
+          <Text TextId="IDT_RECORD1" Value="General settings" />
+          <Text TextId="IDT_REC_DIAG_ACTIVATION" Value="Activate diagnostics" />
+          <Text TextId="IDT_VAL_DIAG_OFF" Value="Inactive" />
+          <Text TextId="IDT_VAL_DIAG_ON" Value="Standard alarms (PROFIdrive)" />
+          <Text TextId="IDT_DIAG_NAME_PD0" Value="Hardware/software error" />
+          <Text TextId="IDT_DIAG_HELP_PD0" Value="Hardware or software malfunction was identified. Carry out a POWER ON of the component involved. If it occurs again, contact the hotline." />
+          <Text TextId="IDT_DIAG_NAME_PD1" Value="Network fault" />
+          <Text TextId="IDT_DIAG_HELP_PD1" Value="A line supply fault has occurred (phase failure, voltage level, ...). Check the line supply / fuses. Check the supply voltage. Check the wiring." />
+          <Text TextId="IDT_DIAG_NAME_PD2" Value="Supply voltage fault" />
+          <Text TextId="IDT_DIAG_HELP_PD2" Value="An electronics power supply fault (48 V, 24 V, 5 V, ...) was identified. Check the wiring. Check the voltage level." />
+          <Text TextId="IDT_DIAG_NAME_PD3" Value="DC link overvoltage" />
+          <Text TextId="IDT_DIAG_HELP_PD3" Value="The DC link voltage has assumed an inadmissibly high value. Check the dimensioning of the system (line supply, reactor, voltages). Check the infeed settings." />
+          <Text TextId="IDT_DIAG_NAME_PD4" Value="Power electronics faulted" />
+          <Text TextId="IDT_DIAG_HELP_PD4" Value="An inadmissible operating state of the power electronics was identified (overcurrent, overtemperature, IGBT failure, ...). Check that the permissible load cycles are maintained. Check the ambient temperatures (fan)." />
+          <Text TextId="IDT_DIAG_NAME_PD5" Value="Overtemperature of the electronic components" />
+          <Text TextId="IDT_DIAG_HELP_PD5" Value="The temperature in the component has exceeded the highest permissible limit. Check the ambient temperature / control cabinet cooling." />
+          <Text TextId="IDT_DIAG_NAME_PD6" Value="Ground fault / inter-phase short-circuit detected" />
+          <Text TextId="IDT_DIAG_HELP_PD6" Value="A ground fault / inter-phase short-circuit was detected in the power cables or in the motor windings. Check the power cables (connection). Check the motor." />
+          <Text TextId="IDT_DIAG_NAME_PD7" Value="Motor overload" />
+          <Text TextId="IDT_DIAG_HELP_PD7" Value="The motor was operated outside the permissible limits (temperature, current, torque, ...). Check the load cycles and limits that have been set. Check the ambient temperature / motor cooling." />
+          <Text TextId="IDT_DIAG_NAME_PD8" Value="Communication error to the higher-level control system" />
+          <Text TextId="IDT_DIAG_HELP_PD8" Value="The communication to the higher-level control system (internal coupling, PROFIBUS, PROFINET, ...) is faulted or interrupted. Check the state of the higher-level control system. Check the communication connection/wiring. Check the bus configuration / clock cycles." />
+          <Text TextId="IDT_DIAG_NAME_PD9" Value="Safety monitoring channel has identified an error" />
+          <Text TextId="IDT_DIAG_HELP_PD9" Value="A safety operation monitoring function (Safety) has detected an error." />
+          <Text TextId="IDT_DIAG_NAME_PD10" Value="Actual position/speed value incorrect or not available" />
+          <Text TextId="IDT_DIAG_HELP_PD10" Value="When evaluating the encoder signals (track signals, zero marks, absolute values, ...) an illegal signal state was detected. Check the encoder / state of the encoder signals. Observe the maximum frequencies." />
+          <Text TextId="IDT_DIAG_NAME_PD11" Value="Internal (DRIVE-CLiQ) communication error" />
+          <Text TextId="IDT_DIAG_HELP_PD11" Value="The internal communication between the SINAMICS components is faulted or interrupted. Check the DRIVE-CLiQ wiring. Ensure an EMC-compliant design. Observe the maximum permissible quantity structure / clock cycles." />
+          <Text TextId="IDT_DIAG_NAME_PD12" Value="Infeed faulted" />
+          <Text TextId="IDT_DIAG_HELP_PD12" Value="The infeed is faulted or has failed. Check the infeed and the surroundings (line supply, filter, reactors, fuses, ...). Check the closed-loop infeed control." />
+          <Text TextId="IDT_DIAG_NAME_PD13" Value="Braking Module faulted" />
+          <Text TextId="IDT_DIAG_HELP_PD13" Value="The internal or external Braking Module is faulted or has an overload condition (temperature). Check the connection / state of the Braking Module. Maintain the permissible number of braking operations and their duration." />
+          <Text TextId="IDT_DIAG_NAME_PD14" Value="Line filter faulted" />
+          <Text TextId="IDT_DIAG_HELP_PD14" Value="The line filter monitoring has detected an excessively high temperature or another inadmissible state. Check the temperature / temperature monitoring. Check the configuration to ensure that it is permissible (filter type, supply, thresholds)." />
+          <Text TextId="IDT_DIAG_NAME_PD15" Value="External measured value / signal state outside the permissible range" />
+          <Text TextId="IDT_DIAG_HELP_PD15" Value="A measured value / signal state entered via the input area (digital/analog/temperature) has an inadmissible value/state. Identify the signal involved and check. Check the thresholds that have been set." />
+          <Text TextId="IDT_DIAG_NAME_PD16" Value="Application/technological function faulted" />
+          <Text TextId="IDT_DIAG_HELP_PD16" Value="The application / technological function has exceeded a (set) limit (position, velocity, torque, ...). Identify the limit involved and check. Check the setpoint input of the higher-level control system." />
+          <Text TextId="IDT_DIAG_NAME_PD17" Value="Error in the parameterization / configuration / commissioning procedure" />
+          <Text TextId="IDT_DIAG_HELP_PD17" Value="An error was identified in the parameterization or in a commissioning procedure, or the parameterization does not match the actual device configuration. Identify the precise cause of the error using the commissioning tool, appropriately adapt the parameterization or device configuration." />
+          <Text TextId="IDT_DIAG_NAME_PD18" Value="General drive fault" />
+          <Text TextId="IDT_DIAG_HELP_PD18" Value="Group fault, determine the precise cause of the fault using the commissioning tool." />
+          <Text TextId="IDT_DIAG_NAME_PD19" Value="Auxiliary unit faulted" />
+          <Text TextId="IDT_DIAG_HELP_PD19" Value="The monitoring of an auxiliary unit (incoming transformer, cooling unit, ...) has identified an illegal state. Identify the precise cause of the fault and check the device involved." />
+          <Text TextId="IDT_FamilyDescription" Value="SINAMICS, the unified family of drives with scalable performance, from the chassis to the cabinet unit in a power range from 120 W to several MW." />
+          <Text TextId="IDT_DAP_NAME_V225_V90-V90PN-V4.7" Value="SINAMICS V90 PN V1.0" />
+          <Text TextId="IDT_DAP_INFO_V225_V90-V90PN-V4.7" Value="IO device SINAMICS V90 PN V1.0 with PROFINET-IO interface (RT, IRT and non-cyclic communications, clock cycle synchronization)" />
+          <Text TextId="IDT_PORT1" Value="Port 1" />
+          <Text TextId="IDT_PORT2" Value="Port 2" />
+          <Text TextId="IDT_ISM_CU" Value="PN-IO" />
+          <Text TextId="IDT_SS_IF_CU" Value="X150" />
+          <Text TextId="IDT_SS_P1_CU" Value="X150 P1" />
+          <Text TextId="IDT_SS_P2_CU" Value="X150 P2" />
+        </PrimaryLanguage>
+        <Language xml:lang="de">
+          <Text TextId="IDT_MOD_NAME_EMPTY" Value="DO ohne PZD" />
+          <Text TextId="IDT_MOD_INFO_EMPTY" Value="Antriebsobjekt (DO) ohne zyklische PZD" />
+          <Text TextId="IDT_MOD_NAME_DRIVE" Value="DRIVE OBJECT" />
+          <Text TextId="IDT_MOD_INFO_DRIVE" Value="Antriebsobjekt" />
+          <Text TextId="IDT_SM_NAME_PAP" Value="Parameter Access Point" />
+          <Text TextId="IDT_SM_INFO_PAP" Value="Zugangspunkt auf die Parameter des Antriebsobjektes (DO)" />
+          <Text TextId="IDT_SM_NAME_MAP" Value="Module Access Point" />
+          <Text TextId="IDT_SM_INFO_MAP" Value="Module Access Point" />
+          <Text TextId="IDT_SM_NAME_EMPTY" Value="leeres Submodul" />
+          <Text TextId="IDT_SM_INFO_EMPTY" Value="leeres Submodul" />
+          <Text TextId="IDT_SM_NAME_NOSAFE" Value="ohne PROFIsafe" />
+          <Text TextId="IDT_SM_INFO_NOSAFE" Value="leeres Submodul" />
+          <Text TextId="IDT_SM_NAME_TEL1" Value="Standard Telegramm 1, PZD-2/2" />
+          <Text TextId="IDT_SM_INFO_TEL1" Value="Standard Telegramm 1: Drehzahlregelung, PZD-Länge 2/2 Worte" />
+          <Text TextId="IDT_SM_NAME_TEL2" Value="Standard Telegramm 2, PZD-4/4" />
+          <Text TextId="IDT_SM_INFO_TEL2" Value="Standard Telegramm 2: Drehzahlregelung, PZD-Länge 4/4 Worte" />
+          <Text TextId="IDT_SM_NAME_TEL3" Value="Standard Telegramm 3, PZD-5/9" />
+          <Text TextId="IDT_SM_INFO_TEL3" Value="Standard Telegramm 3: Drehzahlregelung plus 1 Lagegeber, PZD-Länge 5/9 Worte" />
+          <Text TextId="IDT_SM_NAME_TEL7" Value="Standard Telegramm 7, PZD-2/2" />
+          <Text TextId="IDT_SM_INFO_TEL7" Value="Standard Telegramm 7: Positionieren, PZD-Länge 2/2 Worte" />
+          <Text TextId="IDT_SM_NAME_TEL9" Value="Standard Telegramm 9, PZD-10/5" />
+          <Text TextId="IDT_SM_INFO_TEL9" Value="Standard Telegramm 9: Positionieren, PZD-Länge 10/5 Worte" />
+          <Text TextId="IDT_SM_NAME_TEL102" Value="SIEMENS Telegramm 102, PZD-6/10" />
+          <Text TextId="IDT_SM_INFO_TEL102" Value="SIEMENS Telegramm 102: Drehzahlregelung mit Momentenreduzierung, 1 Lagegeber, PZD-Länge 6/10 Worte" />
+          <Text TextId="IDT_SM_NAME_TEL110" Value="SIEMENS Telegramm 110, PZD-12/7" />
+          <Text TextId="IDT_SM_INFO_TEL110" Value="SIEMENS Telegramm 110: Positionieren, PZD-Länge 12/7 Worte" />
+          <Text TextId="IDT_SM_NAME_TEL111" Value="SIEMENS Telegramm 111, PZD-12/12" />
+          <Text TextId="IDT_SM_INFO_TEL111" Value="SIEMENS Telegramm 111: Positionieren inkl. MDI, PZD-Länge 12/12 Worte" />
+          <Text TextId="IDT_SM_NAME_TEL750" Value="Zusatztelegramm 750, PZD-3/1" />
+          <Text TextId="IDT_SM_INFO_TEL750" Value="Zusatztelegramm 750, Momentensteuerung, PZD-Länge 3/1 Worte" />
+          <Text TextId="IDT_DATAITEM_ACTVAL" Value="Zustandswort oder Istwert" />
+          <Text TextId="IDT_DATAITEM_REFVAL" Value="Steuerwort oder Sollwert" />
+          <Text TextId="IDT_RECORD1" Value="Allgemeine Einstellungen" />
+          <Text TextId="IDT_REC_DIAG_ACTIVATION" Value="Diagnose aktivieren" />
+          <Text TextId="IDT_VAL_DIAG_OFF" Value="Inaktiv" />
+          <Text TextId="IDT_VAL_DIAG_ON" Value="Standardalarme (PROFIdrive)" />
+          <Text TextId="IDT_DIAG_NAME_PD0" Value="Hardware- / Softwarefehler" />
+          <Text TextId="IDT_DIAG_HELP_PD0" Value="Es wurde ein Fehlverhalten der Hardware oder der Software erkannt. POWER ON der betroffenen Komponente durchführen. Bei wiederholtem Auftreten Hotline kontaktieren." />
+          <Text TextId="IDT_DIAG_NAME_PD1" Value="Netzfehler" />
+          <Text TextId="IDT_DIAG_HELP_PD1" Value="Es ist ein Fehler in der Netzversorgung (Phasenausfall, Spannungspegel, ...) aufgetreten. Netz / Sicherungen prüfen. Anschlussspannung prüfen. Verdrahtung überprüfen." />
+          <Text TextId="IDT_DIAG_NAME_PD2" Value="Fehler Versorgungsspannung" />
+          <Text TextId="IDT_DIAG_HELP_PD2" Value="Ein Fehler in der Elektronikversorgung (48 V, 24 V, 5 V, ...) wurde erkannt. Verdrahtung prüfen. Spannungspegel prüfen." />
+          <Text TextId="IDT_DIAG_NAME_PD3" Value="Zwischenkreisüberspannung" />
+          <Text TextId="IDT_DIAG_HELP_PD3" Value="Die Zwischenkreisspannung hat einen unzulässig hohen Wert angenommen. Dimensionierung der Anlage (Netz, Drossel, Spannungen) überprüfen. Einstellungen der Einspeisung prüfen." />
+          <Text TextId="IDT_DIAG_NAME_PD4" Value="Leistungselektronik gestört" />
+          <Text TextId="IDT_DIAG_HELP_PD4" Value="Ein unzulässiger Betriebszustand der Leistungselektronik (Überstrom, Übertemperatur, IGBT-Ausfall, ...) wurde erkannt. Einhaltung der zulässigen Lastspiele überprüfen. Umgebungstemperaturen (Lüfter) prüfen." />
+          <Text TextId="IDT_DIAG_NAME_PD5" Value="Übertemperatur Elektronikkomponente" />
+          <Text TextId="IDT_DIAG_HELP_PD5" Value="Die Temperatur in der Komponente hat die zulässige Höchstgrenze überschritten. Umgebungstemperatur / Schaltschrankbelüftung überprüfen." />
+          <Text TextId="IDT_DIAG_NAME_PD6" Value="Erdschluss / Phasenschluss erkannt" />
+          <Text TextId="IDT_DIAG_HELP_PD6" Value="Es wurde ein Erdschluss / Phasenschluss in den Leistungsleitungen oder in den Motorwicklungen erkannt. Leistungsleitungen (Anschluss) überprüfen. Motor überprüfen." />
+          <Text TextId="IDT_DIAG_NAME_PD7" Value="Überlastung Motor" />
+          <Text TextId="IDT_DIAG_HELP_PD7" Value="Der Motor wurde außerhalb der zulässigen Grenzen (Temperatur, Strom, Drehmoment, ...) betrieben. Lastspiele und eingestellte Begrenzungen überprüfen. Umgebungstemperatur / Motorbelüftung prüfen." />
+          <Text TextId="IDT_DIAG_NAME_PD8" Value="Kommunikation zur überlagerten Steuerung gestört" />
+          <Text TextId="IDT_DIAG_HELP_PD8" Value="Die Kommunikation zur überlagerten Steuerung (Interne Kopplung, PROFIBUS, PROFINET, ...)  ist gestört oder unterbrochen. Zustand der überlagerten Steuerung prüfen. Kommunikationsverbindung / -verdrahtung überprüfen. Busprojektierung / Takte überprüfen." />
+          <Text TextId="IDT_DIAG_NAME_PD9" Value="Sicherer Überwachungskanal hat Fehler erkannt" />
+          <Text TextId="IDT_DIAG_HELP_PD9" Value="Eine Überwachung des sicheren Betriebs (Safety) hat einen Fehler detektiert." />
+          <Text TextId="IDT_DIAG_NAME_PD10" Value="Lage- / Drehzahlistwert fehlerhaft oder nicht verfügbar" />
+          <Text TextId="IDT_DIAG_HELP_PD10" Value="Bei der Auswertung der Gebersignale (Spursignale, Nullmarken, Absolutwerte, ...) wurde ein unzulässiger Signalzustand erkannt. Geber / Zustand der Gebersignale überprüfen. Zulässige Maximalfrequenzen beachten." />
+          <Text TextId="IDT_DIAG_NAME_PD11" Value="Interne (DRIVE-CLiQ) Kommunikation gestört" />
+          <Text TextId="IDT_DIAG_HELP_PD11" Value="Die interne Kommunikation zwischen den SINAMICS-Komponenten ist gestört oder unterbrochen. DRIVE-CLiQ Verdrahtung überprüfen. Für einen EMV-gerechten Aufbau sorgen. Zulässige maximale Mengengerüste / Takte beachten." />
+          <Text TextId="IDT_DIAG_NAME_PD12" Value="Einspeisung gestört" />
+          <Text TextId="IDT_DIAG_HELP_PD12" Value="Die Einspeisung ist gestört oder ausgefallen. Einspeisung und Umfeld (Netz, Filter, Drosseln, Sicherungen, ...) überprüfen. Einspeiseregelung überprüfen." />
+          <Text TextId="IDT_DIAG_NAME_PD13" Value="Bremssteller / Braking Module gestört" />
+          <Text TextId="IDT_DIAG_HELP_PD13" Value="Das interne oder externe Braking Module ist gestört oder überlastet (Temperatur). Anschluss / Zustand des Braking Modules überprüfen. Zulässige Anzahl und Dauer der Bremsvorgänge einhalten." />
+          <Text TextId="IDT_DIAG_NAME_PD14" Value="Netzfilter gestört" />
+          <Text TextId="IDT_DIAG_HELP_PD14" Value="Die Überwachung des Netzfilters hat eine zu hohe Temperatur oder einen anderen unzulässigen Zustand erkannt. Temperatur / Temperaturüberwachung prüfen. Projektierung auf Zulässigkeit prüfen (Filtertyp, Einspeisung, Schwellen)." />
+          <Text TextId="IDT_DIAG_NAME_PD15" Value="Externer Messwert / Signalzustand außerhalb des zulässigen Bereichs" />
+          <Text TextId="IDT_DIAG_HELP_PD15" Value="Ein über den Eingangsbereich (Digital / Analog / Temperatur) eingelesener Messwert / Signalzustand hat einen unzulässigen Wert / Zustand angenommen. Betroffenes Signal ermitteln und überprüfen. Eingestellte Schwellen überprüfen." />
+          <Text TextId="IDT_DIAG_NAME_PD16" Value="Anwendung / Technologische Funktion gestört" />
+          <Text TextId="IDT_DIAG_HELP_PD16" Value="Die Anwendung / Technologische Funktion hat eine (eingestellte) Begrenzung (Position, Geschwindigkeit, Drehmoment, ...) überschritten. Betroffene Begrenzung ermitteln und überprüfen. Sollwertvorgabe der überlagerten Steuerung überprüfen." />
+          <Text TextId="IDT_DIAG_NAME_PD17" Value="Fehler in Parametrierung / Konfiguration / Inbetriebnahmeablauf" />
+          <Text TextId="IDT_DIAG_HELP_PD17" Value="Es wurde ein Fehler in der Parametrierung oder in einem Inbetriebnahmeablauf erkannt oder die Parametrierung passt nicht zur vorgefundenen Gerätekonfiguration. Genaue Fehlerursache mit Inbetriebnahme-Tool ermitteln, Parametrierung oder Gerätekonfiguration anpassen." />
+          <Text TextId="IDT_DIAG_NAME_PD18" Value="Allgemeiner Antriebsfehler" />
+          <Text TextId="IDT_DIAG_HELP_PD18" Value="Sammelfehler, genaue Fehlerursache mit Inbetriebnahme-Tool ermitteln." />
+          <Text TextId="IDT_DIAG_NAME_PD19" Value="Hilfsaggregat gestört" />
+          <Text TextId="IDT_DIAG_HELP_PD19" Value="Die Überwachung eines Hilfsaggregats (Eingangstrafo, Rückkühlanlage, ...) hat einen unzulässigen Zustand erkannt. Genaue Fehlerursache ermitteln und betroffenes Gerät überprüfen." />
+          <Text TextId="IDT_FamilyDescription" Value="SINAMICS, die durchgängige Antriebs-Familie mit skalierbarer Performance, vom Einbaugerät bis hin zum Schrankgerät in einem Leistungsbereich von 120 W bis mehrere MW" />
+          <Text TextId="IDT_DAP_NAME_V225_V90-V90PN-V4.7" Value="SINAMICS V90 PN V1.0" />
+          <Text TextId="IDT_DAP_INFO_V225_V90-V90PN-V4.7" Value="IO-Device SINAMICS V90 PN V1.0 mit PROFINET-IO-Schnittstelle (RT-, IRT- und azyklische Kommunikation, Taktsynchronisation)" />
+          <Text TextId="IDT_PORT1" Value="Port 1" />
+          <Text TextId="IDT_PORT2" Value="Port 2" />
+          <Text TextId="IDT_ISM_CU" Value="PN-IO" />
+          <Text TextId="IDT_SS_IF_CU" Value="X150" />
+          <Text TextId="IDT_SS_P1_CU" Value="X150 P1" />
+          <Text TextId="IDT_SS_P2_CU" Value="X150 P2" />
+        </Language>
+        <Language xml:lang="es">
+          <Text TextId="IDT_MOD_NAME_EMPTY" Value="DO sin PZD" />
+          <Text TextId="IDT_MOD_INFO_EMPTY" Value="Objeto de accionamiento (DO) sin PZD cíclico" />
+          <Text TextId="IDT_MOD_NAME_DRIVE" Value="Accionamiento" />
+          <Text TextId="IDT_MOD_INFO_DRIVE" Value="Objeto de accionamiento" />
+          <Text TextId="IDT_SM_NAME_PAP" Value="Punto de acceso a parámetros" />
+          <Text TextId="IDT_SM_INFO_PAP" Value="Punto de acceso a los parámetros del objeto de accionamiento (DO)" />
+          <Text TextId="IDT_SM_NAME_MAP" Value="Punto de acceso a módulo" />
+          <Text TextId="IDT_SM_INFO_MAP" Value="Punto de acceso a módulo" />
+          <Text TextId="IDT_SM_NAME_EMPTY" Value="Submódulo vacío" />
+          <Text TextId="IDT_SM_INFO_EMPTY" Value="Submódulo vacío" />
+          <Text TextId="IDT_SM_NAME_NOSAFE" Value="sin PROFIsafe" />
+          <Text TextId="IDT_SM_INFO_NOSAFE" Value="Submódulo vacío" />
+          <Text TextId="IDT_SM_NAME_TEL1" Value="Telegrama estándar 1, PZD-2/2" />
+          <Text TextId="IDT_SM_INFO_TEL1" Value="Telegrama estándar 1: regulación de velocidad, longitud PZD 2/2 palabras" />
+          <Text TextId="IDT_SM_NAME_TEL2" Value="Telegrama estándar 2, PZD-4/4" />
+          <Text TextId="IDT_SM_INFO_TEL2" Value="Telegrama estándar 2: regulación de velocidad, longitud PZD 4/4 palabras" />
+          <Text TextId="IDT_SM_NAME_TEL3" Value="Telegrama estándar 3, PZD-5/9" />
+          <Text TextId="IDT_SM_INFO_TEL3" Value="Telegrama estándar 3: regulación de velocidad más 1 encóders de posición, longitud PZD 5/9 palabras" />
+          <Text TextId="IDT_SM_NAME_TEL7" Value="Telegrama estándar 7, PZD-2/2" />
+          <Text TextId="IDT_SM_INFO_TEL7" Value="Telegrama estándar 7: posicionamiento, longitud PZD 2/2 palabras" />
+          <Text TextId="IDT_SM_NAME_TEL9" Value="Telegrama estándar 9, PZD-10/5" />
+          <Text TextId="IDT_SM_INFO_TEL9" Value="Telegrama estándar 9: posicionamiento, longitud PZD 10/5 palabras" />
+          <Text TextId="IDT_SM_NAME_TEL102" Value="Telegrama SIEMENS 102, PZD-6/10" />
+          <Text TextId="IDT_SM_INFO_TEL102" Value="Telegrama SIEMENS 102: regulación de velocidad con reducción de par, 1 encóders de posición, longitud PZD 6/10 palabras" />
+          <Text TextId="IDT_SM_NAME_TEL110" Value="Telegrama SIEMENS 110, PZD-12/7" />
+          <Text TextId="IDT_SM_INFO_TEL110" Value="Telegrama SIEMENS 110: posicionamiento, longitud PZD 12/7 palabras" />
+          <Text TextId="IDT_SM_NAME_TEL111" Value="Telegrama SIEMENS 111, PZD-12/12" />
+          <Text TextId="IDT_SM_INFO_TEL111" Value="Telegrama SIEMENS 111: posicionamiento incl. MDI, long. PZD 12/12 palabras" />
+          <Text TextId="IDT_SM_NAME_TEL750" Value="Telegrama adicional 750, PZD-3/1" />
+          <Text TextId="IDT_SM_INFO_TEL750" Value="Telegrama adicional 750, mando de par, longitud PZD 3/1 palabras" />
+          <Text TextId="IDT_DATAITEM_ACTVAL" Value="Palabra de estado o valor real" />
+          <Text TextId="IDT_DATAITEM_REFVAL" Value="Palabra de mando o consigna" />
+          <Text TextId="IDT_RECORD1" Value="Ajustes generales" />
+          <Text TextId="IDT_REC_DIAG_ACTIVATION" Value="Activar diagnóstico" />
+          <Text TextId="IDT_VAL_DIAG_OFF" Value="Inactivo" />
+          <Text TextId="IDT_VAL_DIAG_ON" Value="Alarmas estándar (PROFIdrive)" />
+          <Text TextId="IDT_DIAG_NAME_PD0" Value="Fallo hardware/software" />
+          <Text TextId="IDT_DIAG_HELP_PD0" Value="Se ha detectado un comportamiento anómalo del hardware o del software. Efectuar un POWER ON del componente afectado. Si continúa apareciendo, contactar con la Hotline." />
+          <Text TextId="IDT_DIAG_NAME_PD1" Value="Fallo red" />
+          <Text TextId="IDT_DIAG_HELP_PD1" Value="Se ha producido un fallo en la alimentación de red (pérdida de fase, nivel de tensión...). Comprobar la red/los fusibles. Comprobar la tensión de conexión. Comprobar el cableado." />
+          <Text TextId="IDT_DIAG_NAME_PD2" Value="Fallo en tensión de alimentación" />
+          <Text TextId="IDT_DIAG_HELP_PD2" Value="Se ha detectado un fallo en la alimentación de la electrónica de control (48 V, 24 V, 5 V...). Comprobar el cableado. Comprobar el nivel de tensión." />
+          <Text TextId="IDT_DIAG_NAME_PD3" Value="Sobretensión en circuito intermedio" />
+          <Text TextId="IDT_DIAG_HELP_PD3" Value="La tensión en el circuito intermedio ha alcanzado un valor inadmisiblemente alto. Comprobar el dimensionado de la instalación (red, bobina, tensiones). Comprobar los ajustes de la unidad de alimentación." />
+          <Text TextId="IDT_DIAG_NAME_PD4" Value="Electrónica de potencia averiada" />
+          <Text TextId="IDT_DIAG_HELP_PD4" Value="Se ha detectado un estado operativo (sobrecorriente, sobretemperatura, fallo de IGBT...) no permitido en la electrónica de potencia. Comprobar si es posible respetar los ciclos de carga permitidos. Comprobar las temperaturas ambiente (ventiladores)." />
+          <Text TextId="IDT_DIAG_NAME_PD5" Value="Sobretemperatura en componente electrónico" />
+          <Text TextId="IDT_DIAG_HELP_PD5" Value="La temperatura en el componente ha superado el límite superior permitido. Comprobar la temperatura ambiente/la ventilación del armario." />
+          <Text TextId="IDT_DIAG_NAME_PD6" Value="Defecto a tierra/entre fases detectado" />
+          <Text TextId="IDT_DIAG_HELP_PD6" Value="Se ha detectado un defecto a tierra/entre fases en los cables de potencia o en los devanados del motor. Comprobar los cables de potencia (conexiones). Comprobar el motor." />
+          <Text TextId="IDT_DIAG_NAME_PD7" Value="Sobrecarga del motor" />
+          <Text TextId="IDT_DIAG_HELP_PD7" Value="El motor ha funcionado con parámetros (temperatura, corriente, par...) fuera de los límites permitidos. Comprobar los ciclos de carga y los límites ajustados. Comprobar la temperatura ambiente/la ventilación del motor." />
+          <Text TextId="IDT_DIAG_NAME_PD8" Value="Comunicación con control superior averiada" />
+          <Text TextId="IDT_DIAG_HELP_PD8" Value="La comunicación con el control superior (conexión interna, PROFIBUS, PROFINET...) está averiada o interrumpida. Comprobar el estado del control superior. Comprobar el enlace/cableado de la comunicación. Comprobar la configuración/velocidades del bus." />
+          <Text TextId="IDT_DIAG_NAME_PD9" Value="El canal de vigilancia seguro ha detectado un fallo" />
+          <Text TextId="IDT_DIAG_HELP_PD9" Value="Una de las vigilancias del funcionamiento seguro (Safety) ha detectado un fallo." />
+          <Text TextId="IDT_DIAG_NAME_PD10" Value="Valor real de posición/velocidad erróneo o no disponible" />
+          <Text TextId="IDT_DIAG_HELP_PD10" Value="Al evaluar las señales del encóder (señales de pista, marcas cero, valores absolutos...) se ha detectado un estado de señal no permitido. Comprobar encóder/estado de señales del encóder. Respetar la frecuencias máximas permitidas." />
+          <Text TextId="IDT_DIAG_NAME_PD11" Value="Comunicación interna (DRIVE-CLiQ) averiada" />
+          <Text TextId="IDT_DIAG_HELP_PD11" Value="La comunicación interna entre los componentes SINAMICS está averiada o interrumpida. Comprobar el cableado DRIVE-CLiQ. Procurar una instalación con compatibilidad electromagnética. Respetar las capacidades funcionales/velocidades máximas permitidas." />
+          <Text TextId="IDT_DIAG_NAME_PD12" Value="Alimentación averiada" />
+          <Text TextId="IDT_DIAG_HELP_PD12" Value="La alimentación está averiada o interrumpida. Comprobar la alimentación y sus componentes asociados (red, filtros, bobinas, fusibles...). Comprobar la regulación de la alimentación." />
+          <Text TextId="IDT_DIAG_NAME_PD13" Value="Chopper de freno/Braking Module averiado" />
+          <Text TextId="IDT_DIAG_HELP_PD13" Value="El Braking Module interno o externo está averiado o sobrecargado (temperatura). Comprobar la conexión/estado del Braking Module. Respetar el número y duración de las operaciones de frenado." />
+          <Text TextId="IDT_DIAG_NAME_PD14" Value="Filtro de red averiado" />
+          <Text TextId="IDT_DIAG_HELP_PD14" Value="La vigilancia del filtro de red ha detectado una temperatura excesiva u otro estado no permitido. Comprobar la temperatura/vigilancia de la temperatura. Comprobar si la configuración es correcta (tipo de filtro, alimentación, umbrales)." />
+          <Text TextId="IDT_DIAG_NAME_PD15" Value="Valor medido externo/estado de señal fuera del rango permitido" />
+          <Text TextId="IDT_DIAG_HELP_PD15" Value="Un valor medido/estado de señal leído a través del área de entrada (digital/analógica/temperatura) ha adoptado un valor/estado no permitido. Determinar y comprobar la señal afectada. Comprobar los umbrales ajustados." />
+          <Text TextId="IDT_DIAG_NAME_PD16" Value="Aplicación/función tecnológica averiada" />
+          <Text TextId="IDT_DIAG_HELP_PD16" Value="La aplicación/función tecnológica ha sobrepasado un límite (de posición, velocidad, par...) ajustado. Determinar y comprobar el límite afectado. Comprobar la consigna especificada por el control superior." />
+          <Text TextId="IDT_DIAG_NAME_PD17" Value="Error en parametrización/configuración/secuencia de puesta en marcha" />
+          <Text TextId="IDT_DIAG_HELP_PD17" Value="Se ha detectado un error en la parametrización o en una secuencia de puesta en marcha; la parametrización no casa con la configuración del equipo encontrada. Determinar la causa exacta usando la herramienta de puesta en marcha; adaptar la parametrización o la configuración del equipo." />
+          <Text TextId="IDT_DIAG_NAME_PD18" Value="Fallo general del accionamiento" />
+          <Text TextId="IDT_DIAG_HELP_PD18" Value="Fallo agrupado; determinar la causa exacta usando la herramienta de puesta en marcha." />
+          <Text TextId="IDT_DIAG_NAME_PD19" Value="Unidad auxiliar averiada" />
+          <Text TextId="IDT_DIAG_HELP_PD19" Value="La vigilancia de una unidad auxiliar (transformador de entrada, unidad de refrigeración...) ha detectado un estado no permitido. Determinar la causa exacta y comprobar el equipo afectado." />
+          <Text TextId="IDT_FamilyDescription" Value="SINAMICS, la familia unificada de accionamientos con rendimiento escalable, del variador tipo bloque al convertidor en armario, cubriendo un rango de potencia desde 120 W hasta varios MW" />
+          <Text TextId="IDT_DAP_NAME_V225_V90-V90PN-V4.7" Value="SINAMICS V90 PN V1.0" />
+          <Text TextId="IDT_DAP_INFO_V225_V90-V90PN-V4.7" Value="IO-Device SINAMICS V90 PN V1.0 con interfaz PROFINET-IO (comunicación RT, IRT y acíclica, modo isócrono)" />
+          <Text TextId="IDT_PORT1" Value="Puerto 1" />
+          <Text TextId="IDT_PORT2" Value="Puerto 2" />
+          <Text TextId="IDT_ISM_CU" Value="PN-IO" />
+          <Text TextId="IDT_SS_IF_CU" Value="X150" />
+          <Text TextId="IDT_SS_P1_CU" Value="X150 P1" />
+          <Text TextId="IDT_SS_P2_CU" Value="X150 P2" />
+        </Language>
+        <Language xml:lang="fr">
+          <Text TextId="IDT_MOD_NAME_EMPTY" Value="DO sans PZD" />
+          <Text TextId="IDT_MOD_INFO_EMPTY" Value="Objet entraînement (DO) sans PZD cyclique" />
+          <Text TextId="IDT_MOD_NAME_DRIVE" Value="Entraînement" />
+          <Text TextId="IDT_MOD_INFO_DRIVE" Value="Objet entraînement" />
+          <Text TextId="IDT_SM_NAME_PAP" Value="Parameter Access Point" />
+          <Text TextId="IDT_SM_INFO_PAP" Value="Point d'accès aux paramètres de l'objet entraînement (DO)" />
+          <Text TextId="IDT_SM_NAME_MAP" Value="Module Access Point" />
+          <Text TextId="IDT_SM_INFO_MAP" Value="Module Access Point" />
+          <Text TextId="IDT_SM_NAME_EMPTY" Value="sous-module vide" />
+          <Text TextId="IDT_SM_INFO_EMPTY" Value="sous-module vide" />
+          <Text TextId="IDT_SM_NAME_NOSAFE" Value="sans PROFIsafe" />
+          <Text TextId="IDT_SM_INFO_NOSAFE" Value="sous-module vide" />
+          <Text TextId="IDT_SM_NAME_TEL1" Value="Télégramme standard 1, PZD-2/2" />
+          <Text TextId="IDT_SM_INFO_TEL1" Value="Télégramme standard 1 : régulation de vitesse, longueur PZD 2/2 mots" />
+          <Text TextId="IDT_SM_NAME_TEL2" Value="Télégramme standard 2, PZD-4/4" />
+          <Text TextId="IDT_SM_INFO_TEL2" Value="Télégramme standard 2 : régulation de vitesse, longueur PZD 4/4 mots" />
+          <Text TextId="IDT_SM_NAME_TEL3" Value="Télégramme standard 3, PZD-5/9" />
+          <Text TextId="IDT_SM_INFO_TEL3" Value="Télégramme standard 3 : régulation de vitesse plus 1 capteurs de position, longueur PZD 5/9 mots" />
+          <Text TextId="IDT_SM_NAME_TEL7" Value="Télégramme standard 7, PZD-2/2" />
+          <Text TextId="IDT_SM_INFO_TEL7" Value="Télégramme standard 7 : positionnement, longueur PZD 2/2 mots" />
+          <Text TextId="IDT_SM_NAME_TEL9" Value="Télégramme standard 9, PZD-10/5" />
+          <Text TextId="IDT_SM_INFO_TEL9" Value="Télégramme standard 9 : positionnement, longueur PZD 10/5 mots" />
+          <Text TextId="IDT_SM_NAME_TEL102" Value="Télégramme SIEMENS 102, PZD-6/10" />
+          <Text TextId="IDT_SM_INFO_TEL102" Value="Télégramme SIEMENS 102 : régulation de vitesse avec réduction du couple, 1 capteurs de position, longueur PZD 6/10 mots" />
+          <Text TextId="IDT_SM_NAME_TEL110" Value="Télégramme SIEMENS 110, PZD-12/7" />
+          <Text TextId="IDT_SM_INFO_TEL110" Value="Télégramme SIEMENS 110 : positionnement, longueur PZD 12/7 mots" />
+          <Text TextId="IDT_SM_NAME_TEL111" Value="Télégramme SIEMENS 111, PZD-12/12" />
+          <Text TextId="IDT_SM_INFO_TEL111" Value="Télégramme SIEMENS 111 : positionnement y comp. MDI, longueur PZD 12/12 mots" />
+          <Text TextId="IDT_SM_NAME_TEL750" Value="Télégramme additionnel 750, PZD-3/1" />
+          <Text TextId="IDT_SM_INFO_TEL750" Value="Télégramme additionnel 750, commande de couple, longueur PZD 3/1 mots" />
+          <Text TextId="IDT_DATAITEM_ACTVAL" Value="Mot d'état ou mesure" />
+          <Text TextId="IDT_DATAITEM_REFVAL" Value="Mot de commande ou consigne" />
+          <Text TextId="IDT_RECORD1" Value="Réglages générales" />
+          <Text TextId="IDT_REC_DIAG_ACTIVATION" Value="Activer le diagnostic" />
+          <Text TextId="IDT_VAL_DIAG_OFF" Value="Inactif" />
+          <Text TextId="IDT_VAL_DIAG_ON" Value="Alarmes standard (PROFIdrive)" />
+          <Text TextId="IDT_DIAG_NAME_PD0" Value="Défaut matériel/logiciel" />
+          <Text TextId="IDT_DIAG_HELP_PD0" Value="Un dysfonctionnement du matériel ou du logiciel a été détecté. Effectuer un POWER ON des constituants concernés. En cas de persistance du défaut, contacter l'assistance téléphonique." />
+          <Text TextId="IDT_DIAG_NAME_PD1" Value="Défaut réseau" />
+          <Text TextId="IDT_DIAG_HELP_PD1" Value="Un défaut est apparu dans l'alimentation réseau (coupure de phase, niveau de tension, ...). Contrôler le réseau et les fusibles. Contrôler la tension de raccordement. Contrôler le câblage." />
+          <Text TextId="IDT_DIAG_NAME_PD2" Value="Défaut tension d'alimentation" />
+          <Text TextId="IDT_DIAG_HELP_PD2" Value="Un défaut a été détecté dans l'alimentation de l'électronique (48 V, 24 V, 5 V, ...). Contrôler le câblage. Contrôler le niveau de tension." />
+          <Text TextId="IDT_DIAG_NAME_PD3" Value="Surtension de circuit intermédiaire" />
+          <Text TextId="IDT_DIAG_HELP_PD3" Value="La valeur de la tension du circuit intermédiaire est trop élevée et non autorisée. Contrôler le dimensionnement de l'installation (réseau, inductance, tensions). Vérifier le paramétrage de l'alimentation." />
+          <Text TextId="IDT_DIAG_NAME_PD4" Value="Electronique de puissance défectueuse" />
+          <Text TextId="IDT_DIAG_HELP_PD4" Value="Un état de fonctionnement non autorisé de l'électronique de puissance (surintensité, surchauffe, défaillance de l'IGBT,...) a été détecté. Contrôler le respect des cycles de charge. Contrôler les températures ambiantes (ventilateurs)." />
+          <Text TextId="IDT_DIAG_NAME_PD5" Value="Surchauffe composants électroniques" />
+          <Text TextId="IDT_DIAG_HELP_PD5" Value="La température du composant a dépassé la limite maximale autorisée. Contrôler la température ambiante / la ventilation de l'armoire électrique." />
+          <Text TextId="IDT_DIAG_NAME_PD6" Value="Défaut à la terre/défaut de phase détecté" />
+          <Text TextId="IDT_DIAG_HELP_PD6" Value="Un défaut à la terre / défaut de phase a été détecté dans les câbles de puissance ou dans les enroulements du moteur. Contrôler les câbles de puissance (raccordement). Contrôler le moteur." />
+          <Text TextId="IDT_DIAG_NAME_PD7" Value="Surcharge moteur" />
+          <Text TextId="IDT_DIAG_HELP_PD7" Value="Le moteur a été exploité au-delà des valeurs autorisées (température, courant, couple, ...). Contrôler les cycles de charge et les limites paramétrées. Contrôler la température ambiante / la ventilation du moteur." />
+          <Text TextId="IDT_DIAG_NAME_PD8" Value="Communication avec la commande de niveau supérieur perturbée" />
+          <Text TextId="IDT_DIAG_HELP_PD8" Value="La communication avec la commande de niveau supérieur (couplage interne, PROFIBUS, PROFINET, ...) est perturbée ou interrompue. Contrôler l'état de la commande de niveau supérieur. Contrôler la liaison / le câblage de communication. Contrôler la configuration du bus / les temps de cycle" />
+          <Text TextId="IDT_DIAG_NAME_PD9" Value="Le canal de surveillance sûre a détecté un défaut" />
+          <Text TextId="IDT_DIAG_HELP_PD9" Value="Une surveillance du fonctionnement sûr (Safety) a détecté un défaut." />
+          <Text TextId="IDT_DIAG_NAME_PD10" Value="Valeur réelle de position / de vitesse manquante ou erronée" />
+          <Text TextId="IDT_DIAG_HELP_PD10" Value="Un état de signal non autorisé a été détecté lors de l'exploitation des signaux du capteur (signaux de voie, tops zéro, valeurs absolues,...). Contrôler le top zéro de signal du codeur. Respecter les fréquences max. admissibles." />
+          <Text TextId="IDT_DIAG_NAME_PD11" Value="Communication interne (DRIVE-CLiQ) perturbée" />
+          <Text TextId="IDT_DIAG_HELP_PD11" Value="La communication interne entre les composants SINAMICS est perturbée ou interrompue. Contrôler le câblage DRIVE-CLiQ. Veiller à assurer la CEM. Respecter les quantités fonctionnelles / temps de cycle maximaux." />
+          <Text TextId="IDT_DIAG_NAME_PD12" Value="Alimentation perturbée" />
+          <Text TextId="IDT_DIAG_HELP_PD12" Value="L'alimentation est perturbée ou défaillante. Contrôler l'alimentation et son environnement (réseau, filtres, inductances, fusibles, ...). Contrôler la régulation de l'alimentation." />
+          <Text TextId="IDT_DIAG_NAME_PD13" Value="Hacheur de freinage/Braking Module défectueux" />
+          <Text TextId="IDT_DIAG_HELP_PD13" Value="Le Braking Module interne ou externe est perturbé ou surchargé (température). Contrôler le raccordement / l'état du Braking Module. Respecter le nombre et la durée admissible des freinages." />
+          <Text TextId="IDT_DIAG_NAME_PD14" Value="Filtre réseau défectueux" />
+          <Text TextId="IDT_DIAG_HELP_PD14" Value="La surveillance du filtre réseau a détecté une température trop élevée ou un autre état inadmissible. Contrôler la température / la surveillance de température. Contrôler la validité de la configuration (type de filtre, alimentation, seuils)." />
+          <Text TextId="IDT_DIAG_NAME_PD15" Value="Valeur de mesure / état de signal externe en dehors de la plage autorisée" />
+          <Text TextId="IDT_DIAG_HELP_PD15" Value="Une valeur de mesure / un état de signal en entrée (TOR, analogique, température) présente une valeur inadmissible. Déterminer le signal concerné et le contrôler. Contrôler les seuils paramétrés." />
+          <Text TextId="IDT_DIAG_NAME_PD16" Value="Application/fonction technologique défaillante" />
+          <Text TextId="IDT_DIAG_HELP_PD16" Value="L'application / la fonction technologique a dépassé un seuil (paramétré - position, vitesse, couple). Déterminer le seuil concerné et le contrôler. Contrôler la consigne provenant de la commande de niveau supérieur." />
+          <Text TextId="IDT_DIAG_NAME_PD17" Value="Défaut dans le paramétrage/la configuration/le déroulement de la mise en service" />
+          <Text TextId="IDT_DIAG_HELP_PD17" Value="Un défaut a été détecté dans le paramétrage ou dans la séquence de mise en service ou le paramétrage ne correspond pas à la configuration réelle des appareils. Déterminer la cause exacte avec un outil de mise en service et adapter le paramétrage ou la configuration des appareils." />
+          <Text TextId="IDT_DIAG_NAME_PD18" Value="Défaut général au niveau de l'entraînement" />
+          <Text TextId="IDT_DIAG_HELP_PD18" Value="Défaut groupé, déterminer la cause exacte avec un outil de mise en service." />
+          <Text TextId="IDT_DIAG_NAME_PD19" Value="Dispositif auxiliaire perturbé" />
+          <Text TextId="IDT_DIAG_HELP_PD19" Value="La surveillance d'un dispositif auxiliaire (transfo d'entrée, refroidissement, ...) a détecté un état inadmissible. Déterminer la cause exacte et contrôler l'appareil concerné." />
+          <Text TextId="IDT_FamilyDescription" Value="SINAMICS, la famille cohérente de variateurs à performance modulable, du modèle encastrable à la version en armoire, couvrant une gamme de puissance de 120 W à plusieurs MW" />
+          <Text TextId="IDT_DAP_NAME_V225_V90-V90PN-V4.7" Value="SINAMICS V90 PN V1.0" />
+          <Text TextId="IDT_DAP_INFO_V225_V90-V90PN-V4.7" Value="Périphérique IO SINAMICS V90 PN V1.0 avec interface PROFINET IO (communication temps réel, temps réel isochrone et acyclique, isochronisme)" />
+          <Text TextId="IDT_PORT1" Value="Port 1" />
+          <Text TextId="IDT_PORT2" Value="Port 2" />
+          <Text TextId="IDT_ISM_CU" Value="PN-IO" />
+          <Text TextId="IDT_SS_IF_CU" Value="X150" />
+          <Text TextId="IDT_SS_P1_CU" Value="X150 P1" />
+          <Text TextId="IDT_SS_P2_CU" Value="X150 P2" />
+        </Language>
+        <Language xml:lang="it">
+          <Text TextId="IDT_MOD_NAME_EMPTY" Value="DO senza PZD" />
+          <Text TextId="IDT_MOD_INFO_EMPTY" Value="Oggetto di azionamento (DO) senza PZD ciclico" />
+          <Text TextId="IDT_MOD_NAME_DRIVE" Value="Azionamento" />
+          <Text TextId="IDT_MOD_INFO_DRIVE" Value="Oggetto di azionamento" />
+          <Text TextId="IDT_SM_NAME_PAP" Value="Parameter Access Point" />
+          <Text TextId="IDT_SM_INFO_PAP" Value="Punto di accesso ai parametri dell'oggetto di azionamento (DO)" />
+          <Text TextId="IDT_SM_NAME_MAP" Value="Module Access Point" />
+          <Text TextId="IDT_SM_INFO_MAP" Value="Module Access Point" />
+          <Text TextId="IDT_SM_NAME_EMPTY" Value="Sottomodulo vuoto" />
+          <Text TextId="IDT_SM_INFO_EMPTY" Value="Sottomodulo vuoto" />
+          <Text TextId="IDT_SM_NAME_NOSAFE" Value="Senza PROFIsafe" />
+          <Text TextId="IDT_SM_INFO_NOSAFE" Value="Sottomodulo vuoto" />
+          <Text TextId="IDT_SM_NAME_TEL1" Value="Telegramma standard 1, PZD 2/2" />
+          <Text TextId="IDT_SM_INFO_TEL1" Value="Telegramma standard 1: regolazione numero di giri, lunghezza PZD 2/2 parole" />
+          <Text TextId="IDT_SM_NAME_TEL2" Value="Telegramma standard 2, PZD 4/4" />
+          <Text TextId="IDT_SM_INFO_TEL2" Value="Telegramma standard 2: regolazione numero di giri, lunghezza PZD 4/4 parole" />
+          <Text TextId="IDT_SM_NAME_TEL3" Value="Telegramma standard 3, PZD 5/9" />
+          <Text TextId="IDT_SM_INFO_TEL3" Value="Telegramma standard 3: regolazione numero di giri più 1 encoder di posizione, lunghezza PZD 5/9 parole" />
+          <Text TextId="IDT_SM_NAME_TEL7" Value="Telegramma standard 7, PZD 2/2" />
+          <Text TextId="IDT_SM_INFO_TEL7" Value="Telegramma standard 7: posizionamento, lunghezza PZD 2/2 parole" />
+          <Text TextId="IDT_SM_NAME_TEL9" Value="Telegramma standard 9, PZD 10/5" />
+          <Text TextId="IDT_SM_INFO_TEL9" Value="Telegramma standard 9: posizionamento, lunghezza PZD 10/5 parole" />
+          <Text TextId="IDT_SM_NAME_TEL102" Value="Telegramma SIEMENS 102, PZD 6/10" />
+          <Text TextId="IDT_SM_INFO_TEL102" Value="Telegramma SIEMENS 102: regolazione numero di giri con riduzione di coppia, 1 encoder di posizione, lunghezza PZD 6/10 parole" />
+          <Text TextId="IDT_SM_NAME_TEL110" Value="Telegramma SIEMENS 110, PZD 12/7" />
+          <Text TextId="IDT_SM_INFO_TEL110" Value="Telegramma SIEMENS 110: posizionamento, lunghezza PZD 12/7 parole" />
+          <Text TextId="IDT_SM_NAME_TEL111" Value="Telegramma SIEMENS 111, PZD 12/12" />
+          <Text TextId="IDT_SM_INFO_TEL111" Value="Telegramma SIEMENS 111: posizionamento incl. MDI, lunghezza PZD 12/12 parole" />
+          <Text TextId="IDT_SM_NAME_TEL750" Value="Telegramma aggiuntivo 750, PZD-3/1" />
+          <Text TextId="IDT_SM_INFO_TEL750" Value="Telegramma aggiuntivo 750, comando di coppia, lunghezza PZD 3/1 parole" />
+          <Text TextId="IDT_DATAITEM_ACTVAL" Value="Parola di stato o valore attuale" />
+          <Text TextId="IDT_DATAITEM_REFVAL" Value="Parola di comando o valore di riferimento" />
+          <Text TextId="IDT_RECORD1" Value="Impostazioni generali" />
+          <Text TextId="IDT_REC_DIAG_ACTIVATION" Value="Attivare diagnostica" />
+          <Text TextId="IDT_VAL_DIAG_OFF" Value="Inattivo" />
+          <Text TextId="IDT_VAL_DIAG_ON" Value="Allarmi standard (PROFIdrive)" />
+          <Text TextId="IDT_DIAG_NAME_PD0" Value="Errore hardware / software" />
+          <Text TextId="IDT_DIAG_HELP_PD0" Value="È stato rilevato un comportamento errato dell'hardware o del software. Eseguire un POWER ON del componente interessato. Se l'errore si ripete contattare la hotline." />
+          <Text TextId="IDT_DIAG_NAME_PD1" Value="Errore di rete" />
+          <Text TextId="IDT_DIAG_HELP_PD1" Value="Si è verificato un errore nell'alimentazione di rete (mancanza di fase, livello di tensione, ...). Controllare rete/fusibili. Controllare la tensione di collegamento. Controllare il cablaggio." />
+          <Text TextId="IDT_DIAG_NAME_PD2" Value="Errore della tensione di alimentazione" />
+          <Text TextId="IDT_DIAG_HELP_PD2" Value="È stato rilevato un errore nell'alimentazione dell'elettronica (48 V, 24 V, 5 V, ...). Controllare il cablaggio. Controllare il livello di tensione." />
+          <Text TextId="IDT_DIAG_NAME_PD3" Value="Sovratensione del circuito intermedio" />
+          <Text TextId="IDT_DIAG_HELP_PD3" Value="La tensione del circuito intermedio ha raggiunto un valore eccessivamente elevato. Controllare il dimensionamento dell'impianto (rete, bobina, tensioni). Controllare le impostazioni dell'alimentazione." />
+          <Text TextId="IDT_DIAG_NAME_PD4" Value="Elettronica di potenza guasta" />
+          <Text TextId="IDT_DIAG_HELP_PD4" Value="È stato rilevato uno stato di esercizio non consentito dell'elettronica di potenza (sovracorrente, sovratemperatura, guasto dei moduli IGBT, ...). Verificare il rispetto dei cicli di carico consentiti. Controllare le temperature ambiente (ventilatori)." />
+          <Text TextId="IDT_DIAG_NAME_PD5" Value="Sovratemperatura di un componente elettronico" />
+          <Text TextId="IDT_DIAG_HELP_PD5" Value="La temperatura di un componente ha superato il limite massimo consentito. Controllare la temperatura ambiente/la ventilazione del quadro elettrico." />
+          <Text TextId="IDT_DIAG_NAME_PD6" Value="Rilevato cortocircuito verso terra / cortocircuito tra le fasi" />
+          <Text TextId="IDT_DIAG_HELP_PD6" Value="È stato rilevato un cortocircuito verso terra / cortocircuito tra le fasi nei cavi di potenza o negli avvolgimenti del motore. Controllare i cavi di potenza (collegamento). Controllare il motore." />
+          <Text TextId="IDT_DIAG_NAME_PD7" Value="Sovraccarico del motore" />
+          <Text TextId="IDT_DIAG_HELP_PD7" Value="Il motore è stato azionato al di fuori dei limiti consentiti (temperatura, corrente, coppia, ...). Controllare i cicli di carico e le limitazioni impostate. Verificare la temperatura ambiente e la ventilazione del motore." />
+          <Text TextId="IDT_DIAG_NAME_PD8" Value="Comunicazione disturbata con il controllore sovraordinato" />
+          <Text TextId="IDT_DIAG_HELP_PD8" Value="La comunicazione con il controllore sovraordinato (accoppiamento interno, PROFIBUS, PROFINET, ...) è disturbata o interrotta. Controllare lo stato del controllore sovraordinato. Controllare il collegamento/cablaggio di comunicazione. Controllare la progettazione del bus/i clock." />
+          <Text TextId="IDT_DIAG_NAME_PD9" Value="Il canale di sorveglianza sicuro ha rilevato errori" />
+          <Text TextId="IDT_DIAG_HELP_PD9" Value="Una sorveglianza del funzionamento sicuro (Safety) ha rilevato un errore." />
+          <Text TextId="IDT_DIAG_NAME_PD10" Value="Valore attuale di posizione/numero di giri errato o non disponibile" />
+          <Text TextId="IDT_DIAG_HELP_PD10" Value="Nella valutazione dei segnali dell'encoder (segnali di traccia, tacche di zero, valori assoluti, ...) è stato rilevato uno stato di segnale non consentito. Controllare l'encoder / lo stato dei segnali dell'encoder. Rispettare le frequenze massime consentite." />
+          <Text TextId="IDT_DIAG_NAME_PD11" Value="Comunicazione interna (DRIVE-CLiQ) disturbata" />
+          <Text TextId="IDT_DIAG_HELP_PD11" Value="La comunicazione interna tra i componenti SINAMICS è disturbata o interrotta. Controllare il cablaggio DRIVE-CLiQ. Garantire un'installazione compatibile EMC. Rispettare le configurazioni massime ammesse / i clock." />
+          <Text TextId="IDT_DIAG_NAME_PD12" Value="Alimentazione guasta" />
+          <Text TextId="IDT_DIAG_HELP_PD12" Value="L'alimentazione è guasta o malfunzionante. Controllare l'alimentazione e l'ambiente (rete, filtri, bobine, fusibili, ...). Controllare la regolazione dell'alimentazione." />
+          <Text TextId="IDT_DIAG_NAME_PD13" Value="Regolatore freno / Braking Module guasto" />
+          <Text TextId="IDT_DIAG_HELP_PD13" Value="Il Braking Module interno o esterno è guasto o sovraccarico (temperatura). Controllare il collegamento / lo stato del Braking Module. Rispettare il numero consentito e la durata delle operazioni di frenatura." />
+          <Text TextId="IDT_DIAG_NAME_PD14" Value="Filtro di rete guasto" />
+          <Text TextId="IDT_DIAG_HELP_PD14" Value="La sorveglianza del filtro di rete ha rilevato una temperatura troppo elevata o un altro stato non consentito. Controllare la temperatura / la sorveglianza della temperatura. Controllare l'ammissibilità della progettazione (tipo di filtro, alimentazione, soglie)." />
+          <Text TextId="IDT_DIAG_NAME_PD15" Value="Valore di misura esterno / stato del segnale al di fuori dell'intervallo consentito" />
+          <Text TextId="IDT_DIAG_HELP_PD15" Value="Un valore di misura / uno stato del segnale superiore all'intervallo di ingresso (digitale / analogico / temperatura) ha raggiunto un valore / uno stato non consentito. Rilevare e controllare il segnale in questione. Controllare le soglie impostate." />
+          <Text TextId="IDT_DIAG_NAME_PD16" Value="Applicazione / funzione tecnologica guasta" />
+          <Text TextId="IDT_DIAG_HELP_PD16" Value="L'applicazione / la funzione tecnologica ha superato una limitazione (impostata) (posizione, velocità, coppia, ...). Rilevare e controllare la limitazione in questione. Controllare l'impostazione del valore di riferimento del controllore sovraordinato." />
+          <Text TextId="IDT_DIAG_NAME_PD17" Value="Errore nella parametrizzazione / configurazione / sequenza di messa in servizio" />
+          <Text TextId="IDT_DIAG_HELP_PD17" Value="È stato rilevato un errore nella parametrizzazione o in una sequenza di messa in servizio oppure la parametrizzazione non corrisponde alla configurazione dell'apparecchio. Rilevare la causa esatta dell'errore con il tool di messa in servizio, quindi adattare la parametrizzazione o la configurazione dell'apparecchio." />
+          <Text TextId="IDT_DIAG_NAME_PD18" Value="Errore generico dell'azionamento" />
+          <Text TextId="IDT_DIAG_HELP_PD18" Value="Errore cumulativo, determinare la causa di esatta dell'errore con il tool di messa in servizio." />
+          <Text TextId="IDT_DIAG_NAME_PD19" Value="Gruppo ausiliario guasto" />
+          <Text TextId="IDT_DIAG_HELP_PD19" Value="La sorveglianza di un gruppo ausiliario (trasformatore di ingresso, impianto di raffreddamento, ...) ha rilevato uno stato non consentito. Determinare la causa esatta dell'errore e controllare l'apparecchio interessato." />
+          <Text TextId="IDT_FamilyDescription" Value="SINAMICS, la famiglia di azionamenti omogenea con prestazioni scalabili, dall'apparecchio ad incasso fino all'apparecchio in armadio in un campo di potenza che va da 120 W fino a più MW" />
+          <Text TextId="IDT_DAP_NAME_V225_V90-V90PN-V4.7" Value="SINAMICS V90 PN V1.0" />
+          <Text TextId="IDT_DAP_INFO_V225_V90-V90PN-V4.7" Value="IO-Device SINAMICS V90 PN V1.0 con interfaccia IO PROFINET (comunicazione RT, IRT e aciclica, sincronismo di clock)" />
+          <Text TextId="IDT_PORT1" Value="Porta 1" />
+          <Text TextId="IDT_PORT2" Value="Porta 2" />
+          <Text TextId="IDT_ISM_CU" Value="PN-IO" />
+          <Text TextId="IDT_SS_IF_CU" Value="X150" />
+          <Text TextId="IDT_SS_P1_CU" Value="X150 P1" />
+          <Text TextId="IDT_SS_P2_CU" Value="X150 P2" />
+        </Language>
+        <Language xml:lang="zh">
+          <Text TextId="IDT_MOD_NAME_EMPTY" Value="无PZD的DO" />
+          <Text TextId="IDT_MOD_INFO_EMPTY" Value="无循环PZD的驱动对象(DO)" />
+          <Text TextId="IDT_MOD_NAME_DRIVE" Value="驱动" />
+          <Text TextId="IDT_MOD_INFO_DRIVE" Value="驱动对象" />
+          <Text TextId="IDT_SM_NAME_PAP" Value="参数访问点" />
+          <Text TextId="IDT_SM_INFO_PAP" Value="驱动对象(DO)参数的输入点" />
+          <Text TextId="IDT_SM_NAME_MAP" Value="模块访问点" />
+          <Text TextId="IDT_SM_INFO_MAP" Value="模块访问点" />
+          <Text TextId="IDT_SM_NAME_EMPTY" Value="空的子模块" />
+          <Text TextId="IDT_SM_INFO_EMPTY" Value="空的子模块" />
+          <Text TextId="IDT_SM_NAME_NOSAFE" Value="没有 PROFIsafe" />
+          <Text TextId="IDT_SM_INFO_NOSAFE" Value="空的子模块" />
+          <Text TextId="IDT_SM_NAME_TEL1" Value="标准报文1, PZD-2/2" />
+          <Text TextId="IDT_SM_INFO_TEL1" Value="标准报文1：转速控制，PZD长度 2/2 字" />
+          <Text TextId="IDT_SM_NAME_TEL2" Value="标准报文2, PZD-4/4" />
+          <Text TextId="IDT_SM_INFO_TEL2" Value="标准报文2：转速控制，PZD长度 4/4 字" />
+          <Text TextId="IDT_SM_NAME_TEL3" Value="标准报文3, PZD-5/9" />
+          <Text TextId="IDT_SM_INFO_TEL3" Value="标准报文3：转速控制包括1个位置编码器，PZD长度 5/9 字" />
+          <Text TextId="IDT_SM_NAME_TEL7" Value="标准报文7, PZD-2/2" />
+          <Text TextId="IDT_SM_INFO_TEL7" Value="标准报文7：定位，PZD长度 2/2 字" />
+          <Text TextId="IDT_SM_NAME_TEL9" Value="标准报文9, PZD-10/5" />
+          <Text TextId="IDT_SM_INFO_TEL9" Value="标准报文9：定位，PZD长度 10/5 字" />
+          <Text TextId="IDT_SM_NAME_TEL102" Value="西门子报文 102, PZD-6/10" />
+          <Text TextId="IDT_SM_INFO_TEL102" Value="西门子报文102：带转矩减小的转速控制，1个位置编码器，PZD长度 6/10 字" />
+          <Text TextId="IDT_SM_NAME_TEL110" Value="西门子报文 110, PZD-12/7" />
+          <Text TextId="IDT_SM_INFO_TEL110" Value="西门子报文110：定位，PZD长度 12/7 字" />
+          <Text TextId="IDT_SM_NAME_TEL111" Value="西门子报文 111, PZD-12/12" />
+          <Text TextId="IDT_SM_INFO_TEL111" Value="西门子报文111：定位包含 MDI，PZD长度 12/12 字" />
+          <Text TextId="IDT_SM_NAME_TEL750" Value="附加报文 750, PZD-3/1" />
+          <Text TextId="IDT_SM_INFO_TEL750" Value="附加报文 750，力矩控制，PZD 长度 3/1 字" />
+          <Text TextId="IDT_DATAITEM_ACTVAL" Value="状态字或实际值" />
+          <Text TextId="IDT_DATAITEM_REFVAL" Value="控制字或设定值" />
+          <Text TextId="IDT_RECORD1" Value="常规设置" />
+          <Text TextId="IDT_REC_DIAG_ACTIVATION" Value="激活诊断" />
+          <Text TextId="IDT_VAL_DIAG_OFF" Value="当前无效" />
+          <Text TextId="IDT_VAL_DIAG_ON" Value="标准报警(PROFIdrive)" />
+          <Text TextId="IDT_DIAG_NAME_PD0" Value="硬件/软件故障" />
+          <Text TextId="IDT_DIAG_HELP_PD0" Value="发现一处硬件或软件故障。请为出现故障的组件重新上电。如果故障仍未清除，请联系热线。" />
+          <Text TextId="IDT_DIAG_NAME_PD1" Value="电源故障" />
+          <Text TextId="IDT_DIAG_HELP_PD1" Value="发现主电源故障（缺相、电压电位错误等）。检查主电源 / 熔断器。检查输入电压。检查布线。" />
+          <Text TextId="IDT_DIAG_NAME_PD2" Value="电源电压故障" />
+          <Text TextId="IDT_DIAG_HELP_PD2" Value="发现一处电子电源(48 V、24 V、5 V ...)故障。检查布线。检查电平。" />
+          <Text TextId="IDT_DIAG_NAME_PD3" Value="直流母线过电压" />
+          <Text TextId="IDT_DIAG_HELP_PD3" Value="直流母线过电压过高。请检查设备的选型配置（主电源、电抗器和电压）。检查电源模块的设置。" />
+          <Text TextId="IDT_DIAG_NAME_PD4" Value="功率元器件故障" />
+          <Text TextId="IDT_DIAG_HELP_PD4" Value="发现功率元器件的运行状态错误（过电流、过热、IGBT失效等）。检查设备是否按规定负载周期工作。检查环境温度（风扇）。" />
+          <Text TextId="IDT_DIAG_NAME_PD5" Value="电子组件过热" />
+          <Text TextId="IDT_DIAG_HELP_PD5" Value="组件的温度超出了允许的上限。检查环境温度/电柜通风。" />
+          <Text TextId="IDT_DIAG_NAME_PD6" Value="有接地/相间短路故障" />
+          <Text TextId="IDT_DIAG_HELP_PD6" Value="发现功率电缆或电机绕组内有接地/相间短路故障。检查功率电缆的接线。检查电机。" />
+          <Text TextId="IDT_DIAG_NAME_PD7" Value="电机过载" />
+          <Text TextId="IDT_DIAG_HELP_PD7" Value="电机运行超出了允许的限值（温度、电流、转矩等）。检查负载周期和设置的限值。检查环境温度和电机散热情况。" />
+          <Text TextId="IDT_DIAG_NAME_PD8" Value="与上位控制器的通讯故障" />
+          <Text TextId="IDT_DIAG_HELP_PD8" Value="与上位控制器（内部连接、PROFIBUS、PROFINET ...）的通讯故障或中断。检查上位控制器的状态。检查通讯电缆的接线。检查总线配置/时钟周期设置。" />
+          <Text TextId="IDT_DIAG_NAME_PD9" Value="安全监控通道发现一处故障" />
+          <Text TextId="IDT_DIAG_HELP_PD9" Value="安全运行监控功能发现一处故障。" />
+          <Text TextId="IDT_DIAG_NAME_PD10" Value="位置/转速实际值错误或缺少" />
+          <Text TextId="IDT_DIAG_HELP_PD10" Value="在分析编码器信号（磁道信号、零脉冲、绝对值等）时发现一处信号状态错误。检查编码器/编码器的状态。检查编码器频率是否在允许的最大频率内。" />
+          <Text TextId="IDT_DIAG_NAME_PD11" Value="内部通讯(DRIVE-CLiQ)故障" />
+          <Text TextId="IDT_DIAG_HELP_PD11" Value="SINAMICS 组件间的内部通讯故障或中断。检查 DRIVE-CLiQ 布线。检查安装是否符合电磁兼容规定。检查设备是否超出了允许的最大配置结构/时钟周期。" />
+          <Text TextId="IDT_DIAG_NAME_PD12" Value="电源模块故障" />
+          <Text TextId="IDT_DIAG_HELP_PD12" Value="电源模块故障或掉电。检查电源模块及其周边设备（主电源、滤波器、电抗器、熔断器等）。检查电源模块的控制。" />
+          <Text TextId="IDT_DIAG_NAME_PD13" Value="制动器/制动模块故障" />
+          <Text TextId="IDT_DIAG_HELP_PD13" Value="内部或外部制动模块故障或过载（温度）。检查制动模块的接线及其工作状态。检查制动模块是否在规定的最大制动次数和时长内工作。" />
+          <Text TextId="IDT_DIAG_NAME_PD14" Value="电源滤波器故障" />
+          <Text TextId="IDT_DIAG_HELP_PD14" Value="电源滤波器的监控功能发现过热或其他异常状态。检查温度/温度监控。检查设置是否符合要求（滤波器类型、供电、阈值）。" />
+          <Text TextId="IDT_DIAG_NAME_PD15" Value="外部测量值/信号状态在允许的范围之外" />
+          <Text TextId="IDT_DIAG_HELP_PD15" Value="从输入区（数字量/模拟量/温度）读出的一个测量值或信号状态错误。找出出错信号并进行检查。检查设置的阈值。" />
+          <Text TextId="IDT_DIAG_NAME_PD16" Value="应用/工艺功能故障" />
+          <Text TextId="IDT_DIAG_HELP_PD16" Value="应用或工艺功能超出了设置的限值（位置、速度或转矩等）。找出被超出的限值并进行检查。检查上位控制器给出的设定值。" />
+          <Text TextId="IDT_DIAG_NAME_PD17" Value="参数设置/配置/调试过程出错" />
+          <Text TextId="IDT_DIAG_HELP_PD17" Value="发现一处参数设置错误或调试错误，或者参数设置和之前找到的设备配置不相符。使用调试工具找出确切的故障原因，修改参数设置或设备配置。" />
+          <Text TextId="IDT_DIAG_NAME_PD18" Value="一般驱动故障" />
+          <Text TextId="IDT_DIAG_HELP_PD18" Value="综合故障，具体的故障原因使用调试工具检测。" />
+          <Text TextId="IDT_DIAG_NAME_PD19" Value="辅助设备故障" />
+          <Text TextId="IDT_DIAG_HELP_PD19" Value="在辅助设备（输入变压器、循环冷却设备 ...）上监控到不允许的状态。找出确切的故障原因并检查相关设备。" />
+          <Text TextId="IDT_FamilyDescription" Value="SINAMICS 驱动系列采用统一设计，提供多种等级的性能和各种结构形式：从内置型到柜机型，输出功率广：从120瓦到数兆瓦。" />
+          <Text TextId="IDT_DAP_NAME_V225_V90-V90PN-V4.7" Value="SINAMICS V90 PN V1.0" />
+          <Text TextId="IDT_DAP_INFO_V225_V90-V90PN-V4.7" Value="IO 设备 SINAMICS V90 V1.0，带有 PROFINET-IO 接口 (RT，IRT 及非循环通讯、等时同步)" />
+          <Text TextId="IDT_PORT1" Value="端口1" />
+          <Text TextId="IDT_PORT2" Value="端口2" />
+          <Text TextId="IDT_ISM_CU" Value="PN-IO" />
+          <Text TextId="IDT_SS_IF_CU" Value="X150" />
+          <Text TextId="IDT_SS_P1_CU" Value="X150 P1" />
+          <Text TextId="IDT_SS_P2_CU" Value="X150 P2" />
+        </Language>
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>

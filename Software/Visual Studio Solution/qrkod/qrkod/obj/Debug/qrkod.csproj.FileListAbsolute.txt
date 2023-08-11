@@ -1,0 +1,85 @@
+C:\Users\aeker\source\repos\qrkod\qrkod\bin\Debug\qrkod.exe.config
+C:\Users\aeker\source\repos\qrkod\qrkod\bin\Debug\qrkod.exe
+C:\Users\aeker\source\repos\qrkod\qrkod\bin\Debug\qrkod.pdb
+C:\Users\aeker\source\repos\qrkod\qrkod\bin\Debug\AForge.dll
+C:\Users\aeker\source\repos\qrkod\qrkod\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\aeker\source\repos\qrkod\qrkod\bin\Debug\AForge.Video.dll
+C:\Users\aeker\source\repos\qrkod\qrkod\bin\Debug\zxing.dll
+C:\Users\aeker\source\repos\qrkod\qrkod\bin\Debug\zxing.presentation.dll
+C:\Users\aeker\source\repos\qrkod\qrkod\bin\Debug\AForge.xml
+C:\Users\aeker\source\repos\qrkod\qrkod\bin\Debug\AForge.Video.xml
+C:\Users\aeker\source\repos\qrkod\qrkod\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\aeker\source\repos\qrkod\qrkod\bin\Debug\zxing.xml
+C:\Users\aeker\source\repos\qrkod\qrkod\bin\Debug\zxing.presentation.xml
+C:\Users\aeker\source\repos\qrkod\qrkod\obj\Debug\qrkod.csproj.AssemblyReference.cache
+C:\Users\aeker\source\repos\qrkod\qrkod\obj\Debug\qrkod.Form1.resources
+C:\Users\aeker\source\repos\qrkod\qrkod\obj\Debug\qrkod.Properties.Resources.resources
+C:\Users\aeker\source\repos\qrkod\qrkod\obj\Debug\qrkod.csproj.GenerateResource.cache
+C:\Users\aeker\source\repos\qrkod\qrkod\obj\Debug\qrkod.csproj.CoreCompileInputs.cache
+C:\Users\aeker\source\repos\qrkod\qrkod\obj\Debug\qrkod.csproj.CopyComplete
+C:\Users\aeker\source\repos\qrkod\qrkod\obj\Debug\qrkod.exe
+C:\Users\aeker\source\repos\qrkod\qrkod\obj\Debug\qrkod.pdb
+C:\Users\aeker\source\repos\qrkod\qrkod\bin\Debug\AForge.Imaging.dll
+C:\Users\aeker\source\repos\qrkod\qrkod\bin\Debug\AForge.Math.dll
+C:\Users\aeker\source\repos\qrkod\qrkod\bin\Debug\AForge.Imaging.xml
+C:\Users\aeker\source\repos\qrkod\qrkod\bin\Debug\AForge.Math.xml
+C:\Users\aeker\source\repos\qrkod\qrkod\bin\Debug\S7.Net.dll
+C:\Users\aeker\source\repos\qrkod\qrkod\bin\Debug\S7.Net.xml
+C:\Users\aeker\source\repos\qrkod\qrkod\obj\Debug\qrkod.Form2.resources
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\bin\Debug\qrkod.exe.config
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\bin\Debug\qrkod.exe
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\bin\Debug\qrkod.pdb
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\bin\Debug\AForge.dll
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\bin\Debug\AForge.Imaging.dll
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\bin\Debug\AForge.Math.dll
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\bin\Debug\AForge.Video.dll
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\bin\Debug\S7.Net.dll
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\bin\Debug\zxing.dll
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\bin\Debug\zxing.presentation.dll
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\bin\Debug\AForge.xml
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\bin\Debug\AForge.Imaging.xml
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\bin\Debug\AForge.Math.xml
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\bin\Debug\AForge.Video.xml
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\bin\Debug\S7.Net.xml
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\bin\Debug\zxing.xml
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\bin\Debug\zxing.presentation.xml
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\obj\Debug\qrkod.csproj.AssemblyReference.cache
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\obj\Debug\qrkod.Form1.resources
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\obj\Debug\qrkod.Form2.resources
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\obj\Debug\qrkod.Properties.Resources.resources
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\obj\Debug\qrkod.csproj.GenerateResource.cache
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\obj\Debug\qrkod.csproj.CoreCompileInputs.cache
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\obj\Debug\qrkod.csproj.CopyComplete
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\obj\Debug\qrkod.exe
+C:\Users\aeker\source\repos\OLD\qrkod\qrkod\obj\Debug\qrkod.pdb
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\bin\Debug\qrkod.exe.config
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\bin\Debug\qrkod.exe
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\bin\Debug\qrkod.pdb
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\bin\Debug\AForge.dll
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\bin\Debug\AForge.Imaging.dll
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\bin\Debug\AForge.Math.dll
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\bin\Debug\AForge.Video.DirectShow.dll
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\bin\Debug\AForge.Video.dll
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\bin\Debug\S7.Net.dll
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\bin\Debug\zxing.dll
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\bin\Debug\zxing.presentation.dll
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\bin\Debug\AForge.xml
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\bin\Debug\AForge.Imaging.xml
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\bin\Debug\AForge.Math.xml
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\bin\Debug\AForge.Video.xml
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\bin\Debug\AForge.Video.DirectShow.xml
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\bin\Debug\S7.Net.xml
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\bin\Debug\zxing.xml
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\bin\Debug\zxing.presentation.xml
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\obj\Debug\qrkod.csproj.AssemblyReference.cache
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\obj\Debug\qrkod.csproj.SuggestedBindingRedirects.cache
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\obj\Debug\qrkod.Form1.resources
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\obj\Debug\qrkod.Form2.resources
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\obj\Debug\qrkod.Properties.Resources.resources
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\obj\Debug\qrkod.csproj.GenerateResource.cache
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\obj\Debug\qrkod.csproj.CoreCompileInputs.cache
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\obj\Debug\qrkod.csproj.CopyComplete
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\obj\Debug\qrkod.exe
+E:\Son PC yedek\repos\OLD\qrkod\qrkod\obj\Debug\qrkod.pdb
