@@ -2,7 +2,7 @@
 
 This project introduces an automation system developed by Recep Arslan and Eren Kürpe during their internship at BARIDA GROUP. In this system, commands encoded as QR codes are decoded into 14-byte data and sent to the PLC for execution. The project integrates Siemens S7-1200 PLC, Siemens V90 servo drive, and a valve.
 
-Project Post: <a href="[https://www.linkedin.com/in/erenkurpe](https://www.linkedin.com/posts/erenkurpe_barida-group-staj-s%C3%BCresinde-recep-arslan-activity-6970039910145642496-sZUC?utm_source=share&utm_medium=member_desktop)" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="kurpeeren" height="30" width="40" /></a>
+Project LinkedIn Post: https://www.linkedin.com/posts/erenkurpe_barida-group-staj-s%C3%BCresinde-recep-arslan-activity-6970039910145642496-sZUC?utm_source=share&utm_medium=member_desktop
 
 ## Project Details
 
