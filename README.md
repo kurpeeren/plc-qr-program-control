@@ -1,3 +1,6 @@
+<!-- <p class="open-website" > QR Code-Based Automation System </p> -->
+<!-- <p class="date-website" > 10.08.2022 </p> -->
+
 # BARIDA GROUP Internship Project: QR Code-Based Automation System
 
 This project introduces an automation system developed by Recep Arslan and Eren Kürpe during their internship at BARIDA GROUP. In this system, commands encoded as QR codes are decoded into 14-byte data and sent to the PLC for execution. The project integrates Siemens S7-1200 PLC, Siemens V90 servo drive, and a valve.
